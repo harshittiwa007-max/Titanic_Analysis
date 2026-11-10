@@ -4,7 +4,7 @@ import pandas as pd
 import joblib
 
 # Load trained model
-model = joblib.load("titanic_model/best_model.joblib")
+model = joblib.load("best_model.joblib")
 
 st.set_page_config(
     page_title="Titanic Survival Predictor",
