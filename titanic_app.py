@@ -65,3 +65,24 @@ input_data = [[
 #     st.write(f"Predicted class: {prediction}")
 #     st.write(f"Estimated survival probability: {probability[1] * 100:.2f}%")
 #     st.write(f"Estimated non-survival probability: {probability[0] * 100:.2f}%")
+
+if st.button("Predict Survival"):
+
+    st.write("Input received by model:")
+    st.write(input_data)
+
+    prediction = model.predict(input_data)[0]
+    probability = model.predict_proba(input_data)[0]
+
+    st.write("Raw prediction:", prediction)
+    st.write("Class probabilities:", probability)
+
+    st.subheader("Prediction Result")
+
+    if prediction == 1:
+        st.success("Passenger is predicted to have survived.")
+    else:
+        st.error("Passenger is predicted not to have survived.")
+
+    st.write(f"Not Survived: {probability[0] * 100:.2f}%")
+    st.write(f"Survived: {probability[1] * 100:.2f}%")
