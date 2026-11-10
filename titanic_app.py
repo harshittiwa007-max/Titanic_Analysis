@@ -51,17 +51,17 @@ input_data = [[
     embarked_value
 ]]
 
-if st.button("Predict Survival"):
-    prediction = model.predict(input_data)[0]
-    probability = model.predict_proba(input_data)[0]
+# if st.button("Predict Survival"):
+#     prediction = model.predict(input_data)[0]
+#     probability = model.predict_proba(input_data)[0]
 
-    st.subheader("Prediction Result")
+#     st.subheader("Prediction Result")
 
-    if prediction == 1:
-        st.success("The model predicts that the passenger survived.")
-    else:
-        st.error("The model predicts that the passenger did not survive.")
+#     if prediction == 1:
+#         st.success("The model predicts that the passenger survived.")
+#     else:
+#         st.error("The model predicts that the passenger did not survive.")
 
-    st.write(f"Predicted class: {prediction}")
-    st.write(f"Estimated survival probability: {probability[1] * 100:.2f}%")
-    st.write(f"Estimated non-survival probability: {probability[0] * 100:.2f}%")
+#     st.write(f"Predicted class: {prediction}")
+#     st.write(f"Estimated survival probability: {probability[1] * 100:.2f}%")
+#     st.write(f"Estimated non-survival probability: {probability[0] * 100:.2f}%")
